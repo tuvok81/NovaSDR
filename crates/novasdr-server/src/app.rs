@@ -25,6 +25,7 @@ pub fn router(state: Arc<state::AppState>) -> Router {
 }
 
 pub async fn serve(state: Arc<state::AppState>) -> anyhow::Result<()> {
+    let host_cfg = state.cfg.server.host.clone();
     let host = state.cfg.server.host.clone();
     let port = state.cfg.server.port;
     let host = if host.contains(':') && !host.starts_with('[') {
@@ -32,12 +33,8 @@ pub async fn serve(state: Arc<state::AppState>) -> anyhow::Result<()> {
     } else {
           host_cfg
     };
-
-    // Fix: 80 & 443
     let http_addr: SocketAddr = format!("{host}:80").parse().context("parse http bind")?;
     let https_addr: SocketAddr = format!("{host}:443").parse().context("parse https bind")?;
-
-    // TLS muss gesetzt sein
     let tls = state
         .cfg
         .server
