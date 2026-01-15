@@ -98,7 +98,6 @@ fn build_payload<'a>(state: &'a AppState, id: &'a str) -> SdrListUpdate<'a> {
         https_port: cfg.server.https_port,
     }
 }
-
 fn build_client(url: &str) -> anyhow::Result<reqwest::Client> {
     let mut headers = HeaderMap::new();
     headers.insert(
