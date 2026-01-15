@@ -318,6 +318,9 @@ impl Default for Server {
             html_root: default_html_root(),
             otherusers: 1,
             threads: default_threads(),
+            http_port: default_http_port(),
+            https_port: default_https_port(),
+            tls: None,               
         }
     }
 }
