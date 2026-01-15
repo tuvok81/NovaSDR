@@ -24,6 +24,12 @@ pub struct Updates {
 }
 
 #[derive(Debug, Clone, Deserialize)]
+pub struct Tls {
+    pub cert_pem_path: String,
+    pub key_pem_path: String,
+}                                  
+
+#[derive(Debug, Clone, Deserialize)]
 pub struct Server {
     #[serde(default = "default_port")]
     pub port: u16,
