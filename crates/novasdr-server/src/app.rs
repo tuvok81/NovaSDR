@@ -90,4 +90,3 @@ pub async fn serve(state: Arc<state::AppState>) -> anyhow::Result<()> {
 
     Ok(())
 }
-}
