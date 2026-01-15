@@ -63,7 +63,7 @@ sudo apt-get update && sudo apt-get install -y --no-install-recommends \
   nodejs npm \
   ocl-icd-opencl-dev ocl-icd-libopencl1 \
   libclfft-dev \
-  libusb-1.0-0-dev
+  libusb-1.0-0-dev openssl libssl-dev
 ```
 
 </details>
