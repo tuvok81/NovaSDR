@@ -3,7 +3,6 @@ use anyhow::Context;
 use axum::{routing::get, Router};
 use std::{net::SocketAddr, sync::Arc, time::Duration, path::PathBuf};
 use tower_http::{compression::CompressionLayer, services::ServeDir};
-
 use axum_server::tls_rustls::RustlsConfig;
 
 pub fn router(state: Arc<state::AppState>) -> Router {
